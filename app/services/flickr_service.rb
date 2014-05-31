@@ -17,8 +17,13 @@ class FlickrService
     ENV.fetch('FLICKR_API_KEY', 'some key');
   end
 
+  def get_shared_secret
+    ENV.fetch('FLICKR_SHARED_SECRET', 'shhh, its secret')
+  end
+
   def find_pictures(search_string)
     Flickrie.api_key = get_api_key
+    Flickrie.shared_secret = get_shared_secret
     query = {:text => search_string, :license=>"1,2,3,4,5,6", :extras=>['owner_name'], :per_page=>50}
     Flickrie.search_photos(query).map{|photo| FlickrPicture.new(photo)}
   end
