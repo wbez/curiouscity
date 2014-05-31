@@ -12,11 +12,9 @@ require 'flickrie'
 
 class FlickrService
   def get_api_key
-    if File.exists? 'config/api-key.yml'
-      config = YAML.load_file('config/api-key.yml')
-      return config["key"]
-    end
-    return "some key"
+    # To allow this to be easily used in Heroku, without committing it to git.
+    # The previous 'some key' convention is kept. There is no particular reason for this.
+    ENV.fetch('FLICKR_API_KEY', 'some key');
   end
 
   def find_pictures(search_string)
