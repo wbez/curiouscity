@@ -90,11 +90,11 @@ class Question < ActiveRecord::Base
   end
 
   def self.recent_questions_with_updated_tags
-    order(tags_updated_at: :desc).where("tags_updated_at <> ''").limit(10)
+    order(tags_updated_at: :desc).where('tags_updated_at IS NOT NULL').limit(10)
   end
 
   def self.recent_questions_with_updated_notes
-    order(notes_updated_at: :desc).where("notes <> ''").limit(10)
+    order(notes_updated_at: :desc).where('notes_updated_at IS NOT NULL').limit(10)
   end
 
   private
