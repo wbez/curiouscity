@@ -32,4 +32,4 @@ module Curiouscity
   end
 end
 DEFAULT_PICTURE='default-question-picture.jpg'
-DISQUS_SHORTNAME='whoawhoa'
+DISQUS_SHORTNAME='whoawhoawhoa'
