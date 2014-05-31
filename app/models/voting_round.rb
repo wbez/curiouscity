@@ -32,11 +32,11 @@ class VotingRound < ActiveRecord::Base
   end
 
   def previous
-    VotingRound.where('status = "Completed" and start_time < "' + self.start_time.to_s + '"').order(start_time: :desc).first
+    VotingRound.where('status = ? and start_time < ?',"Completed", self.start_time).order(start_time: :desc).first
   end
 
   def next
-    VotingRound.where('(status = "Live" or status = "Completed") and start_time > "' + self.start_time.to_s + '"').order(start_time: :asc).first
+    VotingRound.where('(status = ? or status = ?) and start_time > ?', "Live", "Completed", self.start_time).order(start_time: :asc).first
   end
 
   def winner

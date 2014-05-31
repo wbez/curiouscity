@@ -78,11 +78,11 @@ class Question < ActiveRecord::Base
   end
 
   def previous_question
-    Question.where('status != "Removed" AND id<'+(self.id).to_s).order(id: :desc).first
+    Question.where('status != ? AND id<?', "Removed", self.id).order(id: :desc).first
   end
 
   def next_question
-    Question.where('status != "Removed" AND id>'+(self.id).to_s).order(id: :asc).first
+    Question.where('status != ? AND id>?', "Removed", self.id).order(id: :asc).first
   end
 
   def self.recent_questions
@@ -90,11 +90,11 @@ class Question < ActiveRecord::Base
   end
 
   def self.recent_questions_with_updated_tags
-    order(tags_updated_at: :desc).where("tags_updated_at <> ''").limit(10)
+    order(tags_updated_at: :desc).where('tags_updated_at IS NOT NULL').limit(10)
   end
 
   def self.recent_questions_with_updated_notes
-    order(notes_updated_at: :desc).where("notes <> ''").limit(10)
+    order(notes_updated_at: :desc).where('notes_updated_at IS NOT NULL').limit(10)
   end
 
   private
