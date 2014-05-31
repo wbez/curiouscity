@@ -10,7 +10,7 @@ development
     ruby 2.0.0
     rails 4.0
     bootstrap 3.0
-    mysql 5.5.X
+    postgresql 9.x
     
 
 LICENSE

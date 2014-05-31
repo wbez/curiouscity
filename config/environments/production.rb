@@ -89,4 +89,4 @@ Curiouscity::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 end
 
-DISQUS_SHORTNAME='curiouscity'
+DISQUS_SHORTNAME='whoawhoawhoa'
