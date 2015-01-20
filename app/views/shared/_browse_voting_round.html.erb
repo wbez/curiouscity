@@ -6,6 +6,6 @@ Curious City is free software: you can redistribute it and/or modify it under th
 Curious City is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along with Curious City.  If not, see <http://www.gnu.org/licenses/>.!-->
-<%= link_to raw("<span class='arrow left'></span>") + "Voting for " + @previous_voting_round.public_label, voting_round_path(@previous_voting_round), class: "pull-left voting-round" unless @previous_voting_round.nil? %>
-<%= link_to raw("Voting for " + @next_voting_round.public_label + "<span class='arrow right'></span>"), voting_round_path(@next_voting_round), class: "pull-right voting-round" unless @next_voting_round.nil? %>
+<%= link_to raw("<span class='arrow left'></span>") + "Voting for " + @previous_voting_round.public_label, voting_round_path(@previous_voting_round), class: "pull-left" unless @previous_voting_round.nil? %>
+<%= link_to raw("Voting for " + @next_voting_round.public_label + "<span class='arrow right'></span>"), voting_round_path(@next_voting_round), class: "pull-right" unless @next_voting_round.nil? %>
 <br>

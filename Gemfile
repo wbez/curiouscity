@@ -38,7 +38,7 @@ gem 'will_paginate', '~> 3.0'
 #gem 'coffee-rails', '~> 4.0.0'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 2.0'
+  gem 'rspec-rails', '2.14.2'
   gem 'shoulda', '~> 3.5.0'
   gem 'factory_girl_rails', '~>4.2.1'
   gem 'capybara', '~> 2.1.0', '<3.0'
@@ -48,8 +48,9 @@ group :development, :test do
   gem "jasmine"
   gem "launchy"
   gem "selenium-webdriver"
+  # Make sure you have qt installed https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit
+  gem "capybara-webkit"
   gem "database_cleaner", '~> 1.2.0'
-  gem 'debugger'
 end
 
 group :doc do

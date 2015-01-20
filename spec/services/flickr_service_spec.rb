@@ -22,8 +22,8 @@ describe FlickrService do
   it "find_pictures" do
     File.stub(:exists?).and_return(true)
     YAML.stub(:load_file).and_return({"key"=>"mock_key"})
-    photo = double(Flickr::Photo)
-    Flickr.stub(:search_photos).and_return([photo])
+    photo = double(Flickr::Object::Photo)
+    Flickr.stub_chain(:photos, :search).and_return([photo])
     FlickrPicture.stub(:new).with(photo).and_return("some photo")
     flickr_service.find_pictures("chicago").should eq ["some photo"]
   end

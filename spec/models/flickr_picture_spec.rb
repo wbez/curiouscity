@@ -12,7 +12,7 @@ require 'spec_helper'
 
 describe 'FlickrPicture' do
   before do
-    @photo = double(Flickr::Photo,
+    @photo = double(Flickr::Object::Photo,
                    farm: 4,
                    server: "1234",
                    id: "1234567890",

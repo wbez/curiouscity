@@ -13,7 +13,7 @@ require 'features/features_spec_helper'
 describe 'Ask a question', js: true do
 
   before(:each) do
-    @mock_pictures=[double(Flickr::Photo), double(Flickr::Photo)]
+    @mock_pictures=[double(Flickr::Object::Photo), double(Flickr::Object::Photo)]
     @mock_pictures[0].stub(:id).and_return("10542729043")
     @mock_pictures[0].stub(:secret).and_return("af2c52cac9")
     @mock_pictures[0].stub(:farm).and_return(4)
