@@ -48,6 +48,8 @@ group :development, :test do
   gem "jasmine"
   gem "launchy"
   gem "selenium-webdriver"
+  # Make sure you have qt installed https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit
+  gem "capybara-webkit"
   gem "database_cleaner", '~> 1.2.0'
 end
 

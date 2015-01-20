@@ -19,6 +19,7 @@ Dir[Rails.root.join("spec/pages/**/*.rb")].each { |f| require f }
 
 # expand Capybara default wait time out to 10 seconds to make Snap happy
 Capybara.default_wait_time=30
+Capybara.javascript_driver = :webkit
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
@@ -44,7 +45,7 @@ end
 
 
 def switch_to_popup
-  page.driver.browser.switch_to.window(page.driver.browser.window_handles.last)
+  # page.driver.browser.switch_to.window(page.driver.browser.window_handles.last)
 end
 
 def signin_as_admin
